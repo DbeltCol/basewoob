@@ -26,3 +26,5 @@ Route::get('usuarios-por-roles', [UserController::class,'getUserByRoles']);
 Route::get('usuarios-y-roles-por-permiso', [UserController::class,'getRoleByPermissions']);
 
 Route::get('permisos-rol', [RoleController::class,'getById']);
+
+

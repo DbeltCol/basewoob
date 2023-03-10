@@ -29,4 +29,6 @@ services: dentro de ella aplicaremos el principio y conlleva la siguiente estruc
 
 *RUTAS PARA VALIDAR CONSULTAS*
 
-127.0.0.1:8000/api/usuarios-por-roles
+127.0.0.1:8000/api/usuarios-por-roles : Usuarios que tengan los roles 1 y 2
+127.0.0.1:8000/api/usuarios-y-roles-por-permiso : Usuarios que tengan el rol que tiene el permiso 2
+127.0.0.1:8000/api/permisos-rol' : Rol que tiene el permiso 2
