@@ -11,7 +11,7 @@ los permisos y los roles estan asociados a una relación de muchos a muchos = be
 3. Estructura del proyecto
 
 Para el proyecto se hace uso de los controladores y modelos de laravel, se aplica un principio solid para las consultas, Open / Close Principle.
-Esto nos ayuda a crear una estructura más agradable a la hora de escoger diferentes opciones.
+Esto nos ayuda a crear una estructura más agradable a la hora de escoger diferentes opciones en cuanto a formato y tipo de consulta.
 
 Para las consultas en SQL se manejan 2 formatos. Eloquent ORM y Query Builder. Al aplicar este principio logramos escalar mejor otras maneras de consultar
 la base de datos.
@@ -30,8 +30,8 @@ services: dentro de ella aplicaremos el principio y conlleva la siguiente estruc
 *RUTAS PARA VALIDAR CONSULTAS*
 
 127.0.0.1:8000/api/usuarios-por-roles : Usuarios que tengan los roles 1 y 2
+127.0.0.1:8000/api/permisos-rol' : Los permisos que se tienen del rol 1
 127.0.0.1:8000/api/usuarios-y-roles-por-permiso : Usuarios que tengan el rol que tiene el permiso 2
-127.0.0.1:8000/api/permisos-rol' : Rol que tiene el permiso 2
 
 
 
@@ -49,7 +49,7 @@ MAIL_FROM_NAME=
 //Para el middleware de guardar la sesion en una cookie se realiza haciendo la autenticación con passport, con el fin de realizar la configuración
 aparte de como lo hace laravel breeze o jetstream
 
-*RUTA PARA VALIDAR*
+*RUTA PARA VALIDAR COOKIE PASSPORT*
 
 127.0.0.1:8000/api/login
 
