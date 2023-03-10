@@ -32,3 +32,29 @@ services: dentro de ella aplicaremos el principio y conlleva la siguiente estruc
 127.0.0.1:8000/api/usuarios-por-roles : Usuarios que tengan los roles 1 y 2
 127.0.0.1:8000/api/usuarios-y-roles-por-permiso : Usuarios que tengan el rol que tiene el permiso 2
 127.0.0.1:8000/api/permisos-rol' : Rol que tiene el permiso 2
+
+
+
+//PARA UTILIZAR LOS MIDDLEWARE  DE TWO FACT AUTH Y VERIFIED EMAIL ES IMPORTANTE CONFIGURAR LAS VARIABLES DE .env PARA EMAILS
+
+MAIL_MAILER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
+
+//Para el middleware de guardar la sesion en una cookie se realiza haciendo la autenticación con passport, con el fin de realizar la configuración
+aparte de como lo hace laravel breeze o jetstream
+
+*RUTA PARA VALIDAR*
+
+127.0.0.1:8000/api/login
+
+PASOS
+1. Ejecute el cliente
+
+php artisan passport:install
+

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthApiController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -28,3 +29,6 @@ Route::get('usuarios-y-roles-por-permiso', [UserController::class,'getRoleByPerm
 Route::get('permisos-rol', [RoleController::class,'getById']);
 
 
+//route to api login
+
+Route::post('login', [AuthApiController::class,'login']);
