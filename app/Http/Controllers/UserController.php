@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserRolResource;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Service\Users\UserEloquentService;
 use Service\Users\UserQueryService;
@@ -35,5 +36,13 @@ class UserController extends Controller
         $permission = 2;
 
         return UserRolResource::collection($this->userQueryService->userWithSpecificPermission($permission, new UserEloquentService));
+    }
+
+    public function updateLastLogin(Request $request)
+    {
+        auth()->user()->update(['last_login' => Carbon::now()]);
+
+        return redirect('dashboard');
+
     }
 }

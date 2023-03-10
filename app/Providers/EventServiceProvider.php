@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\LastLogin;
+use App\Events\RegisterTwoFactor;
+use App\Events\TwoFactor;
+use App\Listeners\RegisterLastLogin;
+use App\Listeners\RegisterToken;
+use App\Listeners\ValidateTwoFactor;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +24,19 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        RegisterTwoFactor::class => [
+            RegisterToken::class,
+        ],
+
+        TwoFactor::class => [
+            ValidateTwoFactor::class,
+        ],
+
+        LastLogin::class => [
+            RegisterLastLogin::class
+        ]
+
     ];
 
     /**
